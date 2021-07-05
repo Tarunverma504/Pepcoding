@@ -43,7 +43,7 @@ public class deleteanywhere {
            temp.next=null;
         }
         else if(pos>0&&pos<=n-1){
-            System.out.println(",mcxc");
+            
             Node ptr=l1;
             Node prev=l1;
             while(pos!=0){
