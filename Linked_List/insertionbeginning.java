@@ -18,7 +18,7 @@ public class insertionbeginning {
         Node(int data){
             this.data=data;
             next=null;
-        }
+        }   
     }
     public static Node insert(int item){
         Node temp=new Node(item);
