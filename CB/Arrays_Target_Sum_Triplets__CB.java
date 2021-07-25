@@ -52,6 +52,8 @@ public class Arrays_Target_Sum_Triplets__CB {
 			int l=i+1;
 			int r=n-1;
 			while(l<r){
+                            
+                            
 				if(arr[i]+arr[l]+arr[r]>target)
 					r--;
 				else if(arr[i]+arr[l]+arr[r]<target)
