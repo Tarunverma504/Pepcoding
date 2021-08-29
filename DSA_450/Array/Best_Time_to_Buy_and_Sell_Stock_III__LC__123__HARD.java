@@ -54,30 +54,26 @@ public class Best_Time_to_Buy_and_Sell_Stock_III__LC__123__HARD {
         https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
         */
     }
+     // buy1 - Money lent to buy 1 stock
+    // profit1 - Profit after selling
+    // the 1st stock buyed.
+    // buy2 - Money lent to buy 2 stocks
+    // including profit of selling 1st stock
+    // profit2 - Profit after selling 2 stocks
     class Solution {
         public int maxProfit(int[] prices) {
+            int profit1=0;
+            int profit2=0;
+            int buy1=Integer.MAX_VALUE;
+            int buy2=Integer.MAX_VALUE;
 
-            int n=prices.length;
-            int profit[]=new int[n];
-            for(int i=0;i<n;i++)
-                profit[i]=0;
-            int max=prices[n-1];
-            int min=prices[0];
-
-            //tore profit from right to left
-            for(int i=n-2;i>=0;i--){
-                if(prices[i]>max)
-                    max=prices[i];
-                profit[i]=Math.max(profit[i+1],max-prices[i]);
+            for(int i=0;i<prices.length;i++){
+                buy1=Math.min(buy1,prices[i]);
+                profit1=Math.max(profit1,prices[i]-buy1);
+                buy2=Math.min(buy2,prices[i]-profit1);
+                profit2=Math.max(profit2,prices[i]-buy2);
             }
-
-            // add profit of left to right to right to left and store 
-            for(int i=1;i<n;i++){
-                if(prices[i]<min)
-                    min=prices[i];
-                profit[i]=Math.max( profit[i-1], profit[i]+(prices[i]-min));
-            }
-            return profit[n-1];
+            return profit2;
         }
     }
 }
