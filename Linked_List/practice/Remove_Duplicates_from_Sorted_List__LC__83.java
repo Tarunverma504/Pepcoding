@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Leet_Code__GFG;
+package Linked_List.practice;
 
 /**
  *

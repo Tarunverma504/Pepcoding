@@ -1,4 +1,4 @@
-package Leet_Code__GFG;
+package Linked_List.practice;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
