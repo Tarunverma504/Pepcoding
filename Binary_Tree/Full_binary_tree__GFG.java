@@ -45,7 +45,7 @@ Expected Auxiliary Space: O(Height of the Tree).
 Constraints:
 1<=Number of nodes<=1000
 */
-import java.util.*;
+import java.util.*; 
 public class Full_binary_tree__GFG {
     public static void main(String arg[]){
         /*
