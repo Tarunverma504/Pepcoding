@@ -1,4 +1,4 @@
-package Binary_Tree;
+    package Binary_Tree;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -53,7 +53,26 @@ public class Diameter_of_Binary_Tree__LC__543 {
           this.right = right;
       }
   }
+    //-----------------------------Best Approach----------------------------------
+    
     class Solution {
+        int max=0;
+        public int diameterOfBinaryTree(TreeNode root) {
+            maxDepth(root);
+            return max;
+        }
+        public  int maxDepth(TreeNode root){
+            if(root==null)
+                return 0;
+            int left = maxDepth(root.left);
+            int right = maxDepth(root.right);
+            max=Math.max(max,left+right);
+            return Math.max(left,right)+1;
+        }
+    }
+    
+    //-----------------------------worst Approach----------------------------------
+    /*class Solution {
         public int diameterOfBinaryTree(TreeNode root) {
             if(root==null)
                 return 0;
@@ -71,4 +90,5 @@ public class Diameter_of_Binary_Tree__LC__543 {
             return Math.max(left,right)+1;
         }
     }
+    */
 }
