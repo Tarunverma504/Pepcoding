@@ -49,7 +49,7 @@ public class Largest_Area_Histogram {
         }
         // code
         Stack<Integer> s1=new Stack<Integer>();
-        int left[]=new int[a.length];
+        int left[]=new int[a.length];  // store index of the previous smaller element on left if not the -1
         left[0]=-1;
         s1.push(0);
         for(int i=1;i<a.length;i++){
@@ -63,7 +63,7 @@ public class Largest_Area_Histogram {
             s1.push(i);
         }
         Stack<Integer> s2=new Stack<Integer>();
-        int right[]=new int[a.length];
+        int right[]=new int[a.length]; // store the next smaller element if not the array.length
         s2.push(a.length-1);
         right[a.length-1]=a.length;
         for(int i=a.length-2;i>=0;i--){
