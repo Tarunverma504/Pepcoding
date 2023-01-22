@@ -3,15 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Recursion;
+package Recursion_Backtracking;
 
 /**
  *
  * @author Mind_Coder
  */
-
 import java.util.*;
-public class First_Index {
+public class Last_Index {
     public static void main(String[] args) throws Exception {
         // write your code here
         Scanner sc=new Scanner(System.in);
@@ -21,17 +20,21 @@ public class First_Index {
             arr[i]=sc.nextInt();
         }
         int x=sc.nextInt();
-        System.out.println(firstIndex(arr,0,x));
+        System.out.println(lastIndex(arr,0,x));
     }
 
-    public static int firstIndex(int[] arr, int idx, int x){
+    public static int lastIndex(int[] arr, int idx, int x){
         if(idx==arr.length)
             return -1;
-        if(arr[idx]==x)
-            return idx;
-        else{
-            int index=firstIndex(arr,idx+1,x);
-            return index;
+            
+        int lisa=lastIndex(arr,idx+1,x);
+        if(lisa==-1){
+            if(arr[idx]==x)
+                return idx;
+            else
+                return -1;
         }
+        else
+        return lisa;
     }
 }

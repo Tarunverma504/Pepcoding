@@ -29,7 +29,6 @@ Example 2:
 Input: n = 1
 Output: [["Q"]]
 */
-import Recursion.*;
 import java.util.*;
 public class N_Queens__LC__51__HARD {
     static class  Solution {

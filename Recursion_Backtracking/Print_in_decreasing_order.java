@@ -3,27 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Recursion;
+package Recursion_Backtracking;
 
 /**
  *
  * @author Mind_Coder
  */
-
 import java.util.*;
-public class Power_linear {
-    public static void main(String[] args) throws Exception {
-        // write your code here
+public class Print_in_decreasing_order {
+    public static void main(String[] arg){
         Scanner sc=new Scanner(System.in);
-        int x=sc.nextInt();
+        System.out.print("Enter NUmber :-");
         int n=sc.nextInt();
-        System.out.println(power(x,n));
+        pr(n);
     }
-
-    public static int power(int x, int n){
+    public static void pr(int n){
         if(n==0)
-        return 1;
-        
-        return x*power(x,n-1);
+            return;
+        System.out.println(n+" ");
+        pr(n-1);
     }
 }
