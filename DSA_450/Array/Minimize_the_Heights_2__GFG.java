@@ -63,18 +63,33 @@ public class Minimize_the_Heights_2__GFG {
     class Solution {
         int getMinDiff(int[] arr, int n, int k) {
             // code here
+            if(n==1)
+            return 0;
+            int max, min;
+
             Arrays.sort(arr);
-            int ans=arr[n-1]-arr[0];
-            int small=arr[0]+k;
-            int large=arr[n-1]-k;
-            int mi,ma;
-            for(int i=0;i<n-1;i++){
-                mi=Math.min(small,arr[i+1]-k);
-                ma=Math.max(large,arr[i]+k);
-                if(mi<0)continue;
-                ans=Math.min(ans,ma-mi);
+            
+            // arrays is sort 
+            int diff=arr[n-1]-arr[0];
+            /*
+                sort the arrays if we add k at first index and substract k
+                    at last index then diff of last and first gives minimize hight but there is also the possiblity 
+                    that elemnet in between the middle also gives the minimum height
+                    
+                for that we created 2 variables max and min
+                max:- for this we iterate and add K to every element to check whether we got any number on adding k greater
+                       than arr[last]-k
+                min:-  for this we iterate and subtract K to every element to check whether we got any number on subtracting k smaller
+                       than arr[first]+k
+            */
+            for(int i=1;i<n;i++){
+                max = Math.max(arr[i-1]+k, arr[n-1]-k);
+                min = Math.min(arr[0]+k, arr[i]-k);
+                if(min<0)
+                    continue;
+                diff = Math.min(max-min, diff);
             }
-            return ans;
+            return diff;
         }
     }
 }
